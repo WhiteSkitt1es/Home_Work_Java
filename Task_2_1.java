@@ -4,6 +4,13 @@ import java.util.Map;
 public class Task_2_1 {
 
     public static void main(String[] args) {
+        /*
+         * Сформируйте часть WHERE этого запроса, используя StringBuilder.
+         * Пример данных для фильтрации приведены ниже в виде json-строки.
+         * Если значение null, то параметр не должен попадать в запрос.
+         * Пример:
+         * {"name": "Ivanov", "country": "Russia", "city": "Moscow", "age": "null"}
+         */
         String QUERY = "select * from students where ";
         String PARAMS = "{\"name\":\"Ivanov\", \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"null\"} ";
         System.out.println(answer(QUERY,PARAMS));
