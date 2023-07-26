@@ -1,4 +1,3 @@
-import java.util.logging.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
@@ -7,6 +6,10 @@ import java.util.Date;
 
 public class Task_2_2 {
     public static void main(String[] args) throws Exception{
+        /*
+         * Реализуйте алгоритм сортировки пузырьком числового массива,
+         * результат после каждой итерации запишите в лог-файл.
+         */
         int[] array = new int[]{9, 3, 4, 8, 2, 5, 7, 1, 6, 10};
         bubbleSort(array);
     }
