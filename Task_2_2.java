@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class Task_2_2 {
     public static void main(String[] args) throws Exception{
-        int[] array = new int[]{9, 4, 8, 3, 1};
+        int[] array = new int[]{9, 3, 4, 8, 2, 5, 7, 1, 6, 10};
         bubbleSort(array);
     }
     public static void bubbleSort(int[] mas) throws Exception {
@@ -17,21 +17,25 @@ public class Task_2_2 {
         // SimpleFormatter simpleFormatter = new SimpleFormatter();
         // fileHandler.setFormatter(simpleFormatter);
         File log = new File("log.txt");
-        FileWriter fileWriter = new FileWriter(log, true);
+        FileWriter fileWriter = new FileWriter(log);
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
         int temp = 0;
-        for (int j = 0; j < mas.length; j++) {
-            for (int i = 0; i < mas.length - 1 - j; i++) {
-                if (mas[i] > mas[i + 1]){
-                    temp = mas[i];
-                    mas[i] = mas[i + 1];
-                    mas[i + 1] = temp;
-                }
+        boolean isSorted = false;
+        while(!isSorted){
+            isSorted = true;
+            for (int i = 0; i < mas.length - 1; i++) {
+                    if (mas[i] > mas[i + 1]){
+                        isSorted = false;
+                        temp = mas[i];
+                        mas[i] = mas[i + 1];
+                        mas[i + 1] = temp;
+                    }
+                // logger.info(Arrays.toString(mas));
             }
-            // logger.info(Arrays.toString(mas));
             fileWriter.write(dateFormat.format(new Date()) + " " + Arrays.toString(mas) + "\n");
         }
+        fileWriter.flush();
         fileWriter.close();
     }
 }
