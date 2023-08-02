@@ -1,6 +1,6 @@
 public class Task_4_2 {
     public static void main(String[] args) {
-        MyQueue myQueue = new MyQueue<>();
+        MyQueue<Object> myQueue = new MyQueue<>();
         myQueue.enqueue(1);
         myQueue.enqueue(2);
         myQueue.enqueue(3);
